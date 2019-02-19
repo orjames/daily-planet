@@ -1,0 +1,12 @@
+<% include ../partials/header.ejs %>
+
+<a href="/articles">back</a>
+
+<form method='POST' action='/articles'>
+    <input type="text" name="title" placeholder="article title..."><br>
+    <input type='text' name='body' placeholder="article body..."><br>
+    <input type='text' name='image' placeholder="article image URL..."><br>
+    <input type="submit">
+</form>
+
+<% include ../partials/footer.ejs %>

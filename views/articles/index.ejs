@@ -1,0 +1,26 @@
+<% include ../partials/header.ejs %>
+
+
+
+<h1>Articles</h1>
+<div class='newLink'>
+    <a class='newLink' href="/articles/new">new article</a>
+</div>
+<br>
+<% myArticles.forEach(function(article, id) { %>
+    <a class='articleLinks' href='/articles/<%= id %>/'>article <%= id %></a>
+<% }); %>
+
+<% myArticles.forEach(function(article, id) { %>
+    <div class="articleDiv">
+        <img src="<%= article.image %>" alt="">
+        <h3><%= article.title %></h3>
+        <p><%= article.body %></p>
+        <a class='editLink' href='articles/<%=id %>/edit'>edit</a>
+        <form method='POST' action='/articles/<%= id %>/?_method=DELETE'>
+            <input type="submit" value='delete'>
+        </form>
+    </div>
+<% }); %>
+
+<% include ../partials/footer.ejs %>

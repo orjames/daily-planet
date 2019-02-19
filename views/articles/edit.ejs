@@ -1,0 +1,14 @@
+<% include ../partials/header.ejs %>
+
+<a href="/articles">back</a>
+
+<div>
+    <form method='POST' action="/articles/<%= articleId %>/?_method=PUT">
+        <input type="text" name="title" value='<%= article.title %>'><br>
+        <input type='text' class='body' name='body' value='<%= article.body %>'><br>
+        <input type='text' name='image' value='<%= article.image %>'><br>
+        <input type="submit" class="btn btn-primary" value='update'>
+    </form>
+</div>
+
+<% include ../partials/footer.ejs %>
